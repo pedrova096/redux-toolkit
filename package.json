@@ -22,6 +22,7 @@
     "examples/query/react/*"
   ],
   "devDependencies": {
+    "@types/redux": "^3.6.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^5.0.1",
@@ -36,7 +37,6 @@
   },
   "resolutions": {
     "react-scripts": "patch:react-scripts@npm:4.0.2#.yarn/patches/react-scripts__npm_4.0.2.patch",
-    "react-redux": "npm:7.2.4",
     "react": "npm:17.0.2",
     "react-dom": "npm:17.0.2"
   },

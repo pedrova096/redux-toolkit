@@ -99,20 +99,6 @@ const entryPoints: EntryPointOptions[] = [
     extractionConfig: 'api-extractor.json',
     globalName: 'RTK',
   },
-  {
-    prefix: 'rtk-query',
-    folder: 'query',
-    entryPoint: 'src/query/index.ts',
-    extractionConfig: 'api-extractor.query.json',
-    globalName: 'RTKQ',
-  },
-  {
-    prefix: 'rtk-query-react',
-    folder: 'query/react',
-    entryPoint: 'src/query/react/index.ts',
-    extractionConfig: 'api-extractor.query-react.json',
-    globalName: 'RTKQ',
-  },
 ]
 
 const esVersionMappings = {
@@ -253,7 +239,11 @@ async function bundle(options: BuildOptions & EntryPointOptions) {
 /**
  * since esbuild doesn't support umd, we use rollup to convert esm to umd
  */
-async function buildUMD(outputPath: string, prefix: string, globalName: string) {
+async function buildUMD(
+  outputPath: string,
+  prefix: string,
+  globalName: string
+) {
   for (let umdExtension of ['umd', 'umd.min']) {
     const input = path.join(outputPath, `${prefix}.${umdExtension}.js`)
     const instance = await rollup.rollup({
@@ -324,10 +314,6 @@ async function main({ skipExtraction = false, local = false }: BuildArgs) {
 
   // We need one additional package.json file in dist to support
   // versioned types for TS <4.1
-  fs.copyFileSync(
-    'src/query/react/versionedTypes/package.dist.json',
-    'dist/query/react/versionedTypes/package.json'
-  )
 
   if (!skipExtraction) {
     for (let entryPoint of entryPoints) {
