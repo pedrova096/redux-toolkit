@@ -1,8 +1,7 @@
 {
-  "name": "rtk-monorepo",
+  "name": "@toolkit",
+  "version": "1.0",
   "private": true,
-  "description": "The official, opinionated, batteries-included toolset for efficient Redux development",
-  "author": "Mark Erikson <mark@isquaredsoftware.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
