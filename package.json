@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "main": "packages/toolkit/src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reduxjs/redux-toolkit.git"
